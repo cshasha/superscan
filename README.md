@@ -40,6 +40,6 @@ optional arguments:
   An example command, using a dataset named test_ds.h5ad, would be:
   
   ```
-  python superscan.py --dataset test_ds.h5ad --out test
+  python superscan.py --dataset test_datasets/test_ds.h5ad --out test
   ```
-  The resulting predictions as well as corresponding entropy scores will be saved to test.csv.
+  The resulting predictions as well as corresponding entropy scores will be saved to test_superscan.csv.
