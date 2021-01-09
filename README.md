@@ -22,7 +22,7 @@ pip install -r requirements.txt
 
 ## Cell Annotation
 
-Superscan is run directly from the command line. It can read data in either anndata (.h5ad) or csv format (where the csv is a counts matrix, with genes as columns). Gene names must be gene symbols (not ENSEMBL IDs), and raw counts (not normalized) should be provided.
+Superscan is run directly from the command line. It can read data in either anndata (.h5ad) or csv format (where the csv contains a counts matrix, with genes as columns). Gene names must be gene symbols (not ENSEMBL IDs), and raw counts (not normalized) should be provided.
 
 ```
 usage: python superscan.py [-h] --dataset DATASET [--out OUT]
