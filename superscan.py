@@ -13,7 +13,7 @@ import warnings; warnings.simplefilter('ignore')
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--dataset', required=True, help='path to the dataset file')
-parser.add_argument('--out', default='predictions', help='output filename')
+parser.add_argument('--out_prefix', default='predictions', help='output filename prefix')
 opt = parser.parse_args()
 
 features = pd.read_csv('features.csv',index_col=0).index
@@ -22,7 +22,7 @@ model = load('model.joblib')
 print('..loading data')
 
 if not os.path.exists(opt.dataset):
-    sys.exit("The dataset file does not exist.")
+    sys.exit("Error: The dataset file does not exist.")
 
 if (opt.dataset[-4:] != '.csv') & (opt.dataset[-5:] != '.h5ad'):
     sys.exit('Error: Dataset format must be either csv or h5ad.')
@@ -85,8 +85,8 @@ for x in pd.Series(Y_pred).unique():
     counts.append(np.sum(Y_pred == x))
     ent_score.append(np.mean(ent[Y_pred == x]))
 
-print(tabulate(set(zip(cell_type, counts, ent_score)), headers = ['cell type', 'number of cells', 'mean entropy']))
 print('.....exporting results')
-#add index
-pd.DataFrame(data={'cell':data.index,'prediction':Y_pred, 'entropy score': ent}).to_csv(opt.out + '_superscan.csv',index=False)
-print('......done')
+
+pd.DataFrame(data={'cell':data.index,'prediction':Y_pred, 'entropy score': ent}).to_csv(opt.out_prefix + '_superscan.csv',index=False)
+print('......done. Results saved to '+opt.out_prefix+'_superscan.csv')
+print(tabulate(set(zip(cell_type, counts, ent_score)), headers = ['cell type', 'number of cells', 'mean entropy']))
