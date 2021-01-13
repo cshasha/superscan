@@ -2,7 +2,7 @@
 
 ## Overview
 
-Superscan (Supervised Single-Cell Annotation) is a Python package for annotation of huamn scRNA-seq data. Superscan is a supervised model that was trained on a collection of publicly available datasets that were manually labeled using corresponding CITE-seq data.
+Superscan (Supervised Single-Cell Annotation) is a Python package for annotation of human scRNA-seq data. Superscan is a supervised model that was trained on a collection of publicly available datasets that were manually labeled using corresponding CITE-seq data.
 
 ## Installation
 
