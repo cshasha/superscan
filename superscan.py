@@ -17,8 +17,8 @@ parser.add_argument('--out_prefix', default='predictions', help='output filename
 opt = parser.parse_args()
 
 features = pd.read_csv('features.csv',index_col=0)['0']
-model_l1 = load('model_l1.joblib')
-model_l2 = load('model_l2.joblib')
+model_l1 = load('model_l1.joblib.z')
+model_l2 = load('model_l2.joblib.z')
     
 print('..loading data')
 
