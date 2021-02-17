@@ -35,7 +35,7 @@ optional arguments:
   --out_prefix OUT_PREFIX   output filename prefix
   ```
   
-  The only required argument is the input dataset. The output filename can be specified, and will default to "predictions". In addition to saving the results in this file, a summary of the predictions will be shown, displaying the number of cells classified to each cell type, as well as the mean entropy score (an indication of the confidence of the prediction) per cell type. Entropy scores less than 0.5 indicate high confidence in the classification, entropy scores between 0.5 and 1 indicate medium confidence, and entropy scores greater than 1 indicate low confidence.
+  The only required argument is the input dataset. The output filename can be specified, and will default to "predictions". In addition to saving the results in this file, a summary of the predictions will be shown, displaying the number of cells classified to each cell type, as well as the mean normalized entropy score (an indication of the confidence of the prediction) per cell type. Normalized entropy scores less than 0.1 indicate high confidence in the classification, normalized entropy scores between 0.1 and 0.3 indicate medium confidence, and normalized entropy scores greater than 1 indicate low confidence.
   
   Example datasets can be found in the `test_datasets` folder. An example command, using a dataset found at `test_datasets/test_ds.h5ad`, would be:
   
