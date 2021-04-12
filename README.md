@@ -43,3 +43,7 @@ optional arguments:
   python superscan.py --dataset test_datasets/test_ds.h5ad --out_prefix test
   ```
   The resulting predictions as well as corresponding entropy scores will be saved to `test_superscan.csv`.
+
+## Data Availability
+
+The training and testing datasets can be downloaded [here.](https://fh-pi-gottardo-r-eco-public.s3.amazonaws.com/SingleCellDatasets/SingleCellDatasets.html)
